@@ -1,77 +1,21 @@
 <!DOCTYPE html>
-<head>
-	<title>OFFICE AUTOMATION</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width , initial-scale=1.0">
-	<link href="index.css" type="text/css" rel="stylesheet">
-	
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--[if lt IE 9]>
-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-
-    <link href="index.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-	
-	
-	
-</head>
-<body>
-	
-	<div class="topnav" id="myTopnav">
-		<hr>
-		<a id="aidimg" href="index.html"><img src="logo.png" alt="" id="imgtopnav"></a>
-		<a id="aid" href="index.html"><i class="fa fa-home"></i>  Home </a>
-		<hr>
-	</div>
-	
-	
-	
-	<form action="" method="post">
-		<div class="container">
-			<div class="input-group mb-3 input-group-lg">
-				<div class="input-group-prepend">  
-				    
-				<span class="input-group-addon">Username:&nbsp;
-				<i class="glyphicon glyphicon-user"></i>
-				</span>
-				<input type="text" class="form-control" 
-				placeholder="username" name="usr" class="indexinput">
-				</div>
-			</div>
-			<div class="input-group mb-3 input-group-lg">
-				<div class="input-group-prepend">
-		  
-				<span class="input-group-addon">Password:&nbsp;
-				<i class="glyphicon glyphicon-lock"></i>
-				</span>
-				<input type="password" class="form-control" 
-				placeholder="password" name="pass" class="indexinput">
-				</div>
-		    </div>
+<html>
+   <head>
+      <title>Flask Message flashing</title>
+   </head>
+   <body>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <ul>
+               {% for message in messages %}
+               <li<{{ message }}</li>
+               {% endfor %}
+            </ul>
+         {% endif %}
+      {% endwith %}
 		
-    
-            <button type="submit" class="btn btn-primary">Submit</button>
-		
-		</div>
-	</form>
-	
-	
-	
-	<footer class="footerclass">
-		<hr>
-		<p>Designed by Sobhan Esfandyari-2019</p>
-	</footer>
-</body>
-
+      <h1>Flask Message Flashing Example</h1>
+      <p>Do you want to <a href = "{{ url_for('login') }}">
+         <b>log in?</b></a></p>
+   </body>
 </html>
